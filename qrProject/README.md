@@ -1,1 +1,1 @@
-#QR-EASY
+#QR-EASY#
