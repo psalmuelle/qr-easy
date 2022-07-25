@@ -1,5 +1,25 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content %} {% if user.is_authenticated %} Hi {{ user.username }}!
+
+<div>
+    <h1>GENERATE YOUR QR CODE</h1>
+    <form method="POST" action="">
+         {% csrf_token %}
+         <div>
+            <div>
+                <input type="url" name ="url" id="url" placeholder="ENTER A URL"/>
+            </div>
+
+        <input type="submit" value ="Generate qr code"/>
+         </div>
+    </form>
+    <div>
+        {% for qr in qr_code %}
+        <img src="{{qr.image.url}}"/><br>
+        {%endfor%}   
+    </div>
+</div>
+
 <p>
     <a href="{% url 'logout' %}">Log Out !!!</a>
 </p>

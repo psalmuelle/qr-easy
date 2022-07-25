@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'qr_easy',
-    'accounts'
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,8 @@ LOGOUT_REDIRECT_URL = "home" #Route to redirect user when he Logout
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
